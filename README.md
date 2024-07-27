@@ -10,10 +10,10 @@
    - GND -> GND USB Serial (Kabel Hitam)
 - Pastikan supply 9VDC dihubungkan pin VCC; GND Power supply -> GND
 - pasang Jumper untuk menghubungkan IO0 terhubung GND
-- Klik tombol reset (Tekan dan lepas tombol reset)
+- Cabut dan pasang power supply untuk mengaktikan mode download.
 - Download program dan tunggu sampai selesai
 - lepas jumper
-- Klik tombol reset lagi untuk run-program
+- Cabut dan pasang power supply (jumper harus di lepas) untuk run-program
 - ulang langkah awal bila melakukan download ulang lagi
 
 
