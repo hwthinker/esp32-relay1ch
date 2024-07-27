@@ -1,2 +1,2 @@
 ini folder esp32-relay1ch
-ok pentung
+ok pentung  telo moyo
