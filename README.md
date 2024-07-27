@@ -1,4 +1,4 @@
-# Modul ESP8266 ESP-12f Relay 2 Channel 
+# Modul ESP32 Relay 1 Channel 
 ![](https://github.com/hwthinker/esp32-relay1ch/blob/main/picture/1.png)
 
 
@@ -25,6 +25,8 @@
     - GND -> GND USB Serial  
     - IO0 -> IO# USB Serial 
     - EN -> EN# USB Serial
-- Pastikan supply 9VDC dihubungkan pin 7-80VDC
+- Pastikan supply 9VDC dihubungkan pin VCC; GND Power supply -> GND
 - Download program dan tunggu sampai selesai
 
+⚠️ Note:
+Anda dapat memilih untuk menggunakan power supply dari salah satu konektor berikut: konektor Micro USB atau konektor Power (berwarna hijau). Namun, Anda tidak bisa menggunakan kedua konektor secara bersamaan."
