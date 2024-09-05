@@ -20,11 +20,11 @@
 ## Cara download dengan Serial USB auto Download
 ![](https://github.com/hwthinker/esp32-relay1ch/blob/main/picture/2.png)
 - Pasang serial USB TTL dengan ketentuan:
-    - RX -> RX USB Serial  
-    - TX -> TX USB Serial 
-    - GND -> GND USB Serial  
-    - IO0 -> IO# USB Serial 
-    - EN -> EN# USB Serial
+    - RX Board  -> RX USB Serial  
+    - TX Board  -> TX USB Serial 
+    - GND Board -> GND USB Serial  
+    - IO0 Board -> IO# USB Serial 
+    - EN Board  -> EN# USB Serial
 - Pastikan supply 9VDC dihubungkan pin VCC; GND Power supply -> GND
 - Download program dan tunggu sampai selesai
 
