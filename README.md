@@ -1,9 +1,94 @@
 # Modul ESP32 Relay 1 Channel 
-![](https://github.com/hwthinker/esp32-relay1ch/blob/main/picture/1.png)
+![1](./assets/1.png)
 
+## Cara install plugin Arduino IDE
 
-## Cara download dengan jumper
-![](https://github.com/hwthinker/esp32-relay1ch/blob/main/picture/3.png)
+### Langkah 1: Buka Arduino IDE
+
+1. Buka aplikasi Arduino IDE di komputer Anda. Jika belum ada, unduh dan instal Arduino IDE dari situs resmi Arduino di https://www.arduino.cc/en/software. disarankan menggunakan arduino ide versi 2
+
+### Langkah 2: Tambahkan URL Board Manager untuk ESP32
+
+2. Di Arduino IDE, buka **File** > **Preferences**.
+
+   ![image-20241218161205191](./assets/image-20241218161205191.png)
+
+3. Pada bagian  Additional Boards Manager URLs, tambahkan URL berikut:
+
+```
+https://espressif.github.io/arduino-esp32/package_esp32_index.json
+```
+
+4. Jika sebelumnya Anda sudah memiliki URL lain di sana, pisahkan URL ini dengan tanda koma atau baris baru.
+
+![image-20241218161237094](./assets/image-20241218161237094.png)
+
+### Langkah 3: Buka Boards Manager
+
+1. Buka **Tools** > **Board** > **Boards Manager**.
+
+![image-20241218161311408](./assets/image-20241218161311408.png)
+
+2. Di kotak pencarian, ketik **ESP32**.
+
+### Langkah 4: Instal Board ESP32
+
+1. Temukan **ESP32 by Espressif Systems** di daftar, kemudian klik **Install**.
+
+![image-20241218161334116](./assets/image-20241218161334116.png)
+
+2. Tunggu hingga proses instalasi selesai.
+
+### Langkah 5: Pilih Board ESP32
+
+1. Setelah instalasi selesai, Anda dapat memilih board ESP32.
+2. Buka **Tools** > **Board**, dan gulir ke bawah untuk menemukan berbagai jenis board ESP32 yang telah diinstal. Pilih board yang sesuai, misalnya **ESP32 Dev Module** 
+
+![image-20241218161349632](./assets/image-20241218161349632.png)
+
+3. hasilnya kurang lebih seperti ini
+
+![image-20241218161408935](./assets/image-20241218161408935.png)
+
+### Langkah 6: Pilih Port
+
+1. Sambungkan board ESP32 ke komputer Anda menggunakan kabel USB.
+2. Di **Tools** > **Port**, pilih port yang sesuai dengan ESP32 Anda.
+
+## Contoh Program
+
+Berikut adalah contoh kode sederhana untuk menguji relay:
+
+```c++
+#include <Arduino.h>
+
+#define RLY1 16
+#define LED 23
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(RLY1, OUTPUT);
+  pinMode(LED, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(RLY1, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(1000);                      // wait for a second
+  digitalWrite(RLY1, LOW);   // turn the LED off by making the voltage LOW
+  delay(100);    
+  
+  digitalWrite(LED, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(1000);                      // wait for a second
+  digitalWrite(LED, LOW);   // turn the LED off by making the voltage LOW
+  delay(100);                   // wait for a second
+}
+```
+
+## Cara Upload dengan Serial USB biasa
+
+![esp32-konfigurasi](./assets/esp32-konfigurasi.png)
+
 - Pasang serial USB TTL dengan ketentuan: 
    - TX -> RX USB Serial (Kabel Putih)
    - RX -> TX USB Serial (Kabel Hijau)
@@ -17,8 +102,10 @@
 - ulang langkah awal bila melakukan download ulang lagi
 
 
+
+
 ## Cara download dengan Serial USB auto Download
-![](https://github.com/hwthinker/esp32-relay1ch/blob/main/picture/2.png)
+![2](./assets/2.png)
 - Pasang serial USB TTL dengan ketentuan:
     - RX Board  -> RX USB Serial  
     - TX Board  -> TX USB Serial 
@@ -28,5 +115,31 @@
 - Pastikan supply 9VDC dihubungkan pin VCC; GND Power supply -> GND
 - Download program dan tunggu sampai selesai
 
-⚠️ Note:
-Anda dapat memilih untuk menggunakan power supply dari salah satu konektor berikut: konektor Micro USB atau konektor Power (berwarna hijau). Namun, Anda tidak bisa menggunakan kedua konektor secara bersamaan."
+>[!Warning]
+>Anda dapat memilih untuk menggunakan power supply dari salah satu konektor berikut: konektor Micro USB atau konektor Power (berwarna hijau). Namun, Anda tidak bisa menggunakan kedua konektor secara bersamaan."
+
+
+
+>[!NOTE]
+>Untuk serial disarankan menggunakan serial auto download
+>
+>- https://tokopedia.link/Ml3NIixX6Mb atau
+>- https://shopee.co.id/product/21375728/27056587756/ 
+
+
+
+## Pemecahan Masalah
+
+### A. Port Com tidak dapat dikenali di Arduino
+
+Masuk ke mode unduh:
+
+- Tekan dan tahan tombol Boot/0
+- Klik(tekan dan lepas) tombol reset/EN sambil tetap tekan tombol Boot .
+- Lepas tombol boot
+- Setelah selesai Wajib klik tombol **reset** sekali lagi untuk berpindah dari mode download menjadi mode run
+
+### B. Program tidak dapat berjalan setelah diunggah
+
+Setelah upload berhasil, Anda perlu menekan tombol Reset sebelum dapat dijalankan.
+
