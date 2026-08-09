@@ -1,5 +1,22 @@
 # Modul ESP32 Relay 1 Channel
 
+<!-- hwthinker-store-links -->
+
+## Beli boardnya & tutorial lengkap
+
+**Board yang dipakai di repo ini tersedia di HwThinker Store:**
+
+- [Modul ESP32 with Relay 10A 1 Channel ch 1ch WIFI Bluetooth WROOM-32E](https://hwthinker.com/produk/a0190886-8b6d-4eef-8f43-1f073764fd8b)
+
+**Tutorial lengkap — langkah bergambar, troubleshooting, dan kode yang sudah diuji:**
+
+- [Modul ESP32 Relay 1 Channel — Setup Arduino IDE dan Kontrol Relay](https://hwthinker.com/tutorials/esp32-relay-1ch)
+
+Butuh bantuan pemasangan? Sapa kami lewat live chat di [hwthinker.com](https://hwthinker.com) — barang dikirim dari Surabaya, sudah diuji sebelum dikemas.
+
+<!-- /hwthinker-store-links -->
+
+
 ![1](./assets/1.png)
 
 Board ESP32 (WROOM-32E) dengan satu relay 10A onboard — cocok untuk kontrol beban AC/DC sederhana (lampu, pompa, solenoid) lewat WiFi/Bluetooth bawaan ESP32. Relay dikendalikan lewat GPIO 16.
